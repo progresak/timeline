@@ -18,6 +18,10 @@ module.exports = {
                 loader: 'awesome-typescript-loader'
             },
             {
+                test: /\.less$/,
+                loader: 'less-loader' // compiles Less to CSS
+            },
+            {
                 test: /\.(png|jpe?g|gif|woff2|woff)$/i,
                 use: [
                     {
@@ -27,14 +31,7 @@ module.exports = {
             },
             {
                 test: /\.css$/,
-                use: [
-                    {
-                        loader: 'css-loader',
-                        options: {
-                            onlyLocals: true
-                        }
-                    }
-                ]
+                use: ['style-loader', 'css-loader']
             }
         ]
     },
